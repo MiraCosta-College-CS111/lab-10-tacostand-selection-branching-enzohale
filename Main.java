@@ -1,7 +1,7 @@
+// PARTNER NAME:Enzo Hale
 // PARTNER NAME:
-// PARTNER NAME:
-// CS111 SECTION #:
-// DATE:
+// CS111 SECTION #:111 section  branching
+// DATE:3/23
 
 public class Main
 {
@@ -59,6 +59,7 @@ public class Main
 	public static void takeOrder() //TODO: upgrade per documentation
 	{
 		//DECLARATION + INITIALIZATION SECTION
+		
 		int option, numTacosOrdered;
 
 		//INPUT SECTION
@@ -67,10 +68,11 @@ public class Main
 		numTacosOrdered = UtilityBelt.readInt("Enter number of tacos you want> ", 1, 50);
 
 		//CALCULATION + OUTPUT SECTION
-		TacoStand.updateTotalFunds(option, numTacosOrdered);
-		Main.printConfirmation(numTacosOrdered);
+		if (TacoStand.areTacosAvailable(option, numTacosOrdered) == true){  
+			TacoStand.updateTotalFunds(option, numTacosOrdered);
+			Main.printConfirmation(numTacosOrdered);
+		}
 	}
-
 	/**
 	 * Prints confirmation message that varies based on number of tacos in order
 	 * 
@@ -78,7 +80,25 @@ public class Main
 	 */
 	public static void printConfirmation(int numTacos) //TODO: upgrade per documentation
 	{
-		System.out.println("Here you go, buen provecho!");
-		System.out.println("🌮");
+	System.out.println("Here you go, buen provecho!");
+	  	
+		if (numTacos == 1)
+			{System.out.println("🌮");}
+		else if (numTacos == 2)
+			{System.out.println("🌮🌮");}
+		else if (numTacos == 3)
+			{System.out.println("🌮🌮🌮");}
+		else if (numTacos == 4)
+			{System.out.println("🌮🌮🌮🌮");}
+		else if (numTacos == 5)
+			{System.out.println("🌮🌮🌮🌮🌮");}
+		else if (numTacos == 6)
+			{System.out.println("🌮🌮🌮🌮🌮🌮");}
+		else if (numTacos == 7)
+			{System.out.println("🌮🌮🌮🌮🌮🌮🌮");}
+		
+		else {System.out.println("🌮🌮🌮🌮🌮🌮🌮🌮");}
+	
+	System.out.println();
 	}
 }
